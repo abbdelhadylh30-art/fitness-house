@@ -16,35 +16,44 @@ Open http://localhost:3000
 ## Build
 
 ```bash
-bun run build   # produces static export in out/
+bun run build   # default — Vercel-compatible, outputs to .next/
 ```
 
-This project is configured with `output: 'export'` in `next.config.ts`, so the build produces a fully static `out/` folder that can be deployed anywhere.
+### Static export (for Cloudflare Pages Direct Upload, Netlify Drop, S3)
+
+Use the alternate config file:
+```bash
+cp next.config.static.ts next.config.ts
+bun run build           # produces static export in out/
+```
 
 ## Deploy
 
-### Cloudflare Pages (via Git)
-1. Push this repo to GitHub
-2. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git
-3. Pick this repo
-4. Framework preset: **None** (already configured for static export)
-5. Build command: `npm run build`
-6. Build output directory: `out`
-7. Click Save and Deploy
-
-### Vercel
-1. Push to GitHub
+### Vercel (recommended — zero config)
+1. Push this repo to GitHub (default `next.config.ts` is Vercel-ready)
 2. Import at vercel.com/new — auto-detects Next.js
 3. Click Deploy (no config needed)
+4. Every `git push` to main auto-deploys
 
-### Netlify
-1. Push to GitHub
-2. Connect at app.netlify.com
-3. Build command: `npm run build`
-4. Publish directory: `out`
+### Cloudflare Pages (via Git, with static export)
+1. Switch to static config: `cp next.config.static.ts next.config.ts`
+2. Push to GitHub
+3. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git
+4. Pick this repo
+5. Framework preset: **None**
+6. Build command: `npm run build`
+7. Build output directory: `out`
+8. Click Save and Deploy
+
+### Netlify (with static export)
+1. Switch to static config: `cp next.config.static.ts next.config.ts`
+2. Push to GitHub
+3. Connect at app.netlify.com
+4. Build command: `npm run build`
+5. Publish directory: `out`
 
 ## Tech Stack
-- **Framework**: Next.js 16 (App Router, static export)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript 5
 - **Styling**: Tailwind CSS 4
 - **UI Components**: shadcn/ui (New York style) + Lucide icons
