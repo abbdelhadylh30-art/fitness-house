@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  outputFileTracingIncludes: {
+    "/api/**": ["./db/**/*"],
+    "/": ["./db/**/*"],
+    "/opengraph-image": ["./db/**/*"],
+  },
 };
 
 export default nextConfig;
