@@ -17,6 +17,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fitness.abdelhadygabriel.me"),
+  alternates: { canonical: "/" },
   title: "Fitness House — Re-life Your Body",
   description:
     "Fitness House is a boutique studio for yoga, pilates, HIIT and strength training. Re-life your body with expert coaches, premium equipment and a vibrant community.",
