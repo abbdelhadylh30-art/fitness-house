@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   title: "Fitness House — Re-life Your Body",
   description:
-    "Fitness House is a boutique studio for yoga, pilates, HIIT and strength training. Re-life your body with expert coaches, premium equipment and a vibrant community.",
+    "Fitness House is a boutique studio for yoga, pilates, HIIT and strength training. Re-life your body with expert coaches and a vibrant community.",
   keywords: [
     "Fitness House",
     "yoga studio",
@@ -42,12 +42,14 @@ export const metadata: Metadata = {
       "Boutique fitness studio. Yoga, pilates, HIIT and strength. Re-life your body today.",
     siteName: "Fitness House",
     type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Fitness House — Re-life Your Body" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Fitness House — Re-life Your Body",
     description:
       "Boutique fitness studio. Yoga, pilates, HIIT and strength. Re-life your body today.",
+    images: ["/og.png"],
   },
 };
 
